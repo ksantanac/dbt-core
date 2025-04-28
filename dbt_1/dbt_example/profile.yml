@@ -1,0 +1,10 @@
+dbt_example:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: teste-456316
+      dataset: dbt_dw
+      threads: 4
+      keyfile: /home/kaue/.dbt/teste-456316-9b5f07615702.json
