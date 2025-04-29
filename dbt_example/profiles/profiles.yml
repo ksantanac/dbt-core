@@ -1,0 +1,35 @@
+# dbt_example:
+#   target: dev
+#   outputs:
+#     dev:
+#       type: bigquery
+#       method: service-account
+#       project: teste-456316
+#       dataset: dbt_dw
+#       threads: 4
+#       keyfile: /home/kaue/Documentos/Cursos/dbt-core/config/teste-456316-9b5f07615702.json
+dbt_example:
+  target: local_dev
+  outputs:
+
+    local_dev:
+      type: bigquery
+      method: oauth
+      project: dev-data-31ce
+      dataset: dados_alternativos
+      threads: 2
+      job_execution_timeout_seconds: 43200
+      priority: interactive
+      retries: 0
+
+
+    dev:
+        type: bigquery
+        method: oauth
+        project: dev-data-31ce
+        dataset: tribo_dados_monitoring 
+        threads: 4 
+        impersonate_service_account: sa-monit-bases-dados-dev@dev-data-31ce.iam.gserviceaccount.com
+        job_execution_timeout_seconds: 43200
+        priority: interactive
+        retries: 0
