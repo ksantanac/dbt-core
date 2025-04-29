@@ -1,0 +1,46 @@
+version: 2
+
+sources:
+  - name: finance
+    description: "Dados brutos do sistema financeiro empresarial"
+    schema: dados_alternativos
+    laoder: bigquery
+    loaded_at_field: data_carga # Campo que indica quando os dados foram carregados por data pela ultima vez
+    meta: 
+      owner: "Equifax"
+    freshness:
+      freshness: 
+        warn_after: {count: 1, period: day} # Se ficar 1 dia sem atualizar, envia uma alerta, mas ainda continua rodando
+        error_after: {count: 2, period: day} # Se ficar 2 dias sem atualizar, envia um alerta de erro, mas para.
+
+
+    tables:
+      - name: dados_financeiros
+        description: "Tabela com os dados financeiros da empresa"
+        columns:
+          - name: nome
+            description: "Nome do lancamento"
+          - name: data
+            description: "Data do lancamento"
+          - name: valor
+            description: "Valor do lancamento"
+          - name: status
+            description: "Status do lancamento"
+          - name: banco
+            description: "Banco do lancamento"
+          - name: destino
+            description: "Destino do lancamento"
+          - name: responsavel
+            description: "Responsavel pelo lancamento"
+          - name: tipo
+            description: "Tipo do lancamento"
+          - name: valor_real
+            description: "Valor real do lancamento"
+          - name: categoria
+            description: "Categoria do lancamento"
+          - name: mes
+            description: "Mes do lancamento"
+          - name: id
+            description: "ID do lancamento"
+            tests:
+              - not_null
