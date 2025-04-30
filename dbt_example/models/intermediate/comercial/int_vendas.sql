@@ -6,8 +6,8 @@
 
 with orders as (
     select
-        extract(month from order_date) as month,
-        extract(year from order_date) as year,
+        extract(month from order_date) as mes,
+        extract(year from order_date) as ano,
         freight as total_frete
     from {{ ref('stg_orders') }}
 )
