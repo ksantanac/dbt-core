@@ -40,8 +40,12 @@ models:
       materialized: ephemeral
       tags: ['intermediate']
 
-
     marts:
       schema: marts
       materialized: table
       tags: ['marts']
+
+  seeds:
+    dbt_example:
+      +schema: seeds
+      tags: ['seeds']

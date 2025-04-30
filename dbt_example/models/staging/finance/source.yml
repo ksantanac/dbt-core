@@ -4,14 +4,17 @@ sources:
   - name: finance
     description: "Dados brutos do sistema financeiro empresarial"
     schema: dados_alternativos
-    laoder: bigquery
+    loader: bigquery
     loaded_at_field: data_carga # Campo que indica quando os dados foram carregados por data pela ultima vez
     meta: 
       owner: "Equifax"
     freshness:
-      freshness: 
-        warn_after: {count: 1, period: day} # Se ficar 1 dia sem atualizar, envia uma alerta, mas ainda continua rodando
-        error_after: {count: 2, period: day} # Se ficar 2 dias sem atualizar, envia um alerta de erro, mas para.
+      warn_after:
+        count: 1
+        period: day # Se ficar 1 dia sem atualizar, envia uma alerta, mas ainda continua rodando
+      error_after: 
+        count: 2 
+        period: day # Se ficar 2 dias sem atualizar, envia um alerta de erro, mas para.
 
 
     tables:
