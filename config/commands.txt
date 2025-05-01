@@ -1,0 +1,13 @@
+dbt run -s +fct_vendas => Roda o modelo fct e todos que dependem dele
+
+dbt run -s stg_orders+ => Roda o modelo stg e todos adiante dele
+
+dbt run --exclude stg_orders => Roda todos os modelos menos o indicado no comando
+
+dbt test => Roda todos os testes da tabela
+
+dbt test -s stg_orders => Roda os testes do modelo indicado
+
+dbt compile => compila o projeto (não no banco)
+
+dbt build => Executa o projeto por completo
