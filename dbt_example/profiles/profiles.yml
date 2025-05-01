@@ -1,24 +1,24 @@
-# dbt_example:
-#   target: dev
-#   outputs:
-#     dev:
-#       type: bigquery
-#       method: service-account
-#       project: teste-456316
-#       dataset: dbt_dw
-#       threads: 4
-#       keyfile: /home/kaue/Documentos/Cursos/dbt-core/config/teste-456316-9b5f07615702.json
-
 dbt_example:
-  target: local_dev
+  target: dev
   outputs:
-
-    local_dev:
+    dev:
       type: bigquery
-      method: oauth
-      project: dev-data-31ce
-      dataset: dados_alternativos
-      threads: 2
-      job_execution_timeout_seconds: 43200
-      priority: interactive
-      retries: 0
+      method: service-account
+      project: teste-456316
+      dataset: dbt_dw
+      threads: 4
+      keyfile: /home/kaue/Documentos/Cursos/dbt-core/config/teste-456316-9b5f07615702.json
+
+# dbt_example:
+#   target: local_dev
+#   outputs:
+
+#     local_dev:
+#       type: bigquery
+#       method: oauth
+#       project: dev-data-31ce
+#       dataset: dados_alternativos
+#       threads: 2
+#       job_execution_timeout_seconds: 43200
+#       priority: interactive
+#       retries: 0

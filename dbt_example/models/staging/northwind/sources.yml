@@ -3,7 +3,7 @@ version: 2
 sources:
   - name: northwind
     description: "Dados brutos do sistema de vendas da empresa"
-    schema: dados_alternativos
+    schema: dbt_dw
     loader: bigquery
 
     tables:

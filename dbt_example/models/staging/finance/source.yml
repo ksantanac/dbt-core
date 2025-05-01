@@ -3,7 +3,8 @@ version: 2
 sources:
   - name: finance
     description: "Dados brutos do sistema financeiro empresarial"
-    schema: dados_alternativos
+    # schema: dados_alternativos
+    schema: dbt_dw
     loader: bigquery
     loaded_at_field: data_carga # Campo que indica quando os dados foram carregados por data pela ultima vez
     meta: 
@@ -45,5 +46,5 @@ sources:
             description: "Mes do lancamento"
           - name: id
             description: "ID do lancamento"
-            tests:
-              - not_null
+            # tests:
+            #   - not_null

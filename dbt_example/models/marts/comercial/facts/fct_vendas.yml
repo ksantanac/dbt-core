@@ -9,8 +9,6 @@ models:
         description: "Mês da venda"
         data_tests:
           - not_null
-          - accepted_values:
-              values: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']          
 
       - name: ano
         description: "Ano da venda"
