@@ -8,7 +8,7 @@ dbt_example:
       dataset: dbt_dw
       threads: 4
       # keyfile: /home/kaue/Documentos/Cursos/dbt-core/config/teste-456316-9b5f07615702.json
-      keyfile: /home/kaue/Documentos/Cursos/DBT/dbt-core/config/teste-456316-9b5f07615702.json
+      keyfile: /home/kaue/Documentos/Cursos/dbt-core/config/teste-456316-9b5f07615702.json
 # dbt_example:
 #   target: local_dev
 #   outputs:
