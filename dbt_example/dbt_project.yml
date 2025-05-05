@@ -49,3 +49,8 @@ models:
     dbt_example:
       +schema: seeds
       tags: ['seeds']
+
+snapshots:
+  dbt_example:
+    schema: snapshots
+    tags: ['snapshots']
