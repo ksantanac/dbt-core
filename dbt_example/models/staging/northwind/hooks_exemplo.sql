@@ -13,7 +13,6 @@ SELECT * FROM temp_clientes
 
 ----
 
-
 {{
     config(
         pre_hook=[
@@ -31,7 +30,7 @@ SELECT * FROM temp_clientes
 
 
 ----
-
+-- executa para insert de logs
 {{
     config(
         post_hook=[
@@ -43,7 +42,14 @@ SELECT * FROM temp_clientes
 SELECT * FROM clientes
 
 ----
-
+-- executa o post_hook com envio de alerta
+{{
+    config(
+        post_hook=[
+            "{% if target.name == 'prod' %} INSERT INTO log_execucoes(modelo, data_execucao, status) VALUES ('{{ this.name }}', CURRENT_TIMESTAMP, 'SUCESSO') {% endif %}"
+        ]
+    )
+}}
 {{
     config(
         post_hook=[
@@ -56,7 +62,7 @@ SELECT * FROM clientes
 
 
 ----
-
+-- executa o post_hook apenas no ambiente de produção
 {{
     config(
         post_hook=[
