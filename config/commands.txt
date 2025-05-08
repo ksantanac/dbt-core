@@ -13,3 +13,5 @@ dbt compile => compila o projeto (não no banco)
 dbt build => Executa o projeto por completo
 
 dbt snapshots => para executar os snapshots
+
+dbt run --vars '{"ambiente": "produção"}' => Executar o dbt com variavel de ambiente
